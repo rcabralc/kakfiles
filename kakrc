@@ -11,7 +11,7 @@ plug "h-youhei/kakoune-surround" config %{
 }
 
 map global normal <space> , -docstring 'leader'
-map global normal <c-h> <space> -docstring 'remove all selections except main'
+map global normal <ret> <space> -docstring 'remove all selections except main'
 map global normal <a-c-h> <a-space> -docstring 'remove main selection'
 
 map global insert <c-l> '<esc>'
