@@ -24,16 +24,16 @@ map global user s ': enter-user-mode surround<ret>' -docstring 'surround mode'
 map global user y %{<a-|> $(
     type termux-clipboard-set 2&>/dev/null &&
     echo termux-clipboard-set ||
-    echo xset --clipboard
+    echo xclip -selection c
 )<ret>} -docstring 'yank selection to clipboard'
 map global user p %{<a-!> $(
     type termux-clipboard-get 2&>/dev/null &&
     echo termux-clipboard-get ||
-    echo xset --output --clipboard
+    echo xclip -selection c -o
 )<ret>} -docstring 'paste clipboard contents after selection'
 map global user P %{! $(
     type termux-clipboard-get 2&>/dev/null &&
     echo termux-clipboard-get ||
-    echo xset --output --clipboard
+    echo xclip -selection c -o
 )<ret>} -docstring 'paste clipboard contents before selection'
 map global user d ',yd' -docstring 'cut selection to clipboard'
