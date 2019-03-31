@@ -4,6 +4,15 @@ plug "andreyorst/plug.kak" noload
 plug "alexherbo2/auto-pairs.kak" config %{
     hook global WinCreate .* %{ auto-pairs-enable }
 }
+plug "alexherbo2/space-indent.kak" config %{
+    hook global WinCreate .* %{ space-indent-enable }
+}
+plug "alexherbo2/volatile-highlighter.kak" config %{
+    hook global WinCreate .* %{ volatile-highlighter-enable }
+    face global Volatile default,bright-black
+}
+
+colorscheme undefined
 
 map global normal <space> , -docstring 'leader'
 map global normal <ret> <space> -docstring 'remove all selections except main'
